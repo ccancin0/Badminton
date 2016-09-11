@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'acklatt', to: 'static_pages#acklatt', as: 'acklatt'
   get 'sdflming', to: 'static_pages#sdflming', as: 'sdflming'
 
   # Set the default page for the web app.
