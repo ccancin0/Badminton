@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
 
-  def sdflming
-  end
+def ccancino
+end
+
+def sdflming
+end
 
 end
