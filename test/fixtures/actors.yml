@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: James Bond
+  gender: male
+  homepage: http://www.007.com/
+  age: 37
+
+two:
+  name: jdjkskjdjkkjsjkjksjkjkdjksdjkdsjkdsjdsjdsjdsjdjdjdjdjdjdjdjddds
+  gender: female
+  homepage: http://www.007.com/
+  age: 45
+
+three:
+  name: 
+  gender: male
+  homepage: http://www.007.com/
+  age: 34
+
+four:
+  name: billy
+  gender: alien
+  homepage: http://www.007.com/
+  age: 21
+
+five:
+  name: john doe
+  gender: 
+  homepage: http://www.007.com/
+  age: 67
+
+six:
+  name: johnny
+  gender: male
+  homepage: 
+  age: 67
+
+seven:
+  name: david
+  gender: male
+  homepage: www.007.com
+  age: 67
+
+eight:
+  name: ashley
+  gender: female
+  homepage: http://www.007.com/
+  age: 1
+
+nine:
+  name: caitlyn
+  gender: female
+  homepage: http://www.007.com/
+  age: 126
+
+ten:
+  name: kat
+  gender: female
+  homepage: http://www.007.com/
+  age: 
