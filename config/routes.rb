@@ -1,6 +1,7 @@
 
 
 Rails.application.routes.draw do
+  resources :reviewers
   resources :actors
   resources :films
   get 'acklatt', to: 'static_pages#acklatt', as: 'acklatt'
