@@ -1,8 +1,8 @@
 
 
 Rails.application.routes.draw do
-
   resources :actors
+  resources :films
   get 'acklatt', to: 'static_pages#acklatt', as: 'acklatt'
   get 'sdflming', to: 'static_pages#sdflming', as: 'sdflming'
   get 'ccancino', to: 'static_pages#ccancino', as: 'ccancino'
