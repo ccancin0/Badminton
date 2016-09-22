@@ -1,5 +1,5 @@
 require 'test_helper'
-
+#ccancino
 class ActorTest < ActiveSupport::TestCase
    test "should be no error, valid value for name" do
    		actors = actors(:one)
