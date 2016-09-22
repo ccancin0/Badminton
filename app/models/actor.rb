@@ -1,3 +1,4 @@
+#ccancino
 class Actor < ApplicationRecord
 	validates :name, length: { maximum: 60 }, uniqueness: true, presence: true
 	validates :gender, inclusion: { in: %w(male female non-binary category),
