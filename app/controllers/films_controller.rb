@@ -1,5 +1,32 @@
 class FilmsController < ApplicationController
   before_action :set_film, only: [:show, :edit, :update, :destroy]
+  before_action :set_films
+
+  def set_films
+    @films = Film.all
+  end
+
+  # GET inventory
+  def inventory
+    @film = Film.new
+
+    render 'inventory'
+  end
+
+# Produce
+def produce
+    @film = Film.new(film_params)
+
+    respond_to do |format|
+      if @film.save
+        format.html { redirect_to "http://localhost:3000/films/inventory", notice: 'Film was successfully created.' }
+        format.json { render :show, status: :created, location: @inventory }
+      else
+        format.html { render 'inventory' }
+        format.json { render json: @film.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # GET /films
   # GET /films.json

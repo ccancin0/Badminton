@@ -1,0 +1,72 @@
+<!-- <p id="notice"><%= notice %></p> -->
+<%= form_for @film do |f| %>
+  <% if @film.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@film.errors.count, "error") %> prohibited this film from being saved:</h2>
+
+      <ul>
+      <% @film.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>Inventory</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Imdb url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <% @films = @films.sort_by{|e| -e[:imdb_url]} %> 
+
+  <tbody>
+    <% @films.each do |film| %>
+      <tr>
+        <td><%= film.id %></td>
+        <td><%= film.title %></td>
+        <td><%= film.imdb_url %></td>
+        <td><%= link_to 'Update', edit_film_path(film) %></td>
+        <td><%= link_to 'Delete', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h2> Add </h2>
+<br>
+
+<%= form_for @film, url: {action: 'produce'} do |f| %>
+
+  <div class="field">
+    <%= f.label :imdb_url %>
+    <%= f.text_field :imdb_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :release_year %>
+    <%= f.number_field :release_year %>
+  </div>
+
+  <div class="field">
+    <%= f.label :genre %>
+    <%= f.text_field :genre %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Produce" %>
+  </div>
+<% end %>

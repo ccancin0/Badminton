@@ -1,6 +1,8 @@
 
 
 Rails.application.routes.draw do
+  get '/films/inventory', to: 'films#inventory', as: 'films_inventory'
+  post '/films/inventory', to: 'films#produce'
   resources :reviewers
   resources :actors
   resources :films
