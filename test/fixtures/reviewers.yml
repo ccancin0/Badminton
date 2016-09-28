@@ -1,0 +1,72 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+  handle: Andrew Hayes
+  phone: 901-334-6799
+  status: top
+  years_active: 37
+
+two:
+  handle: asdfasdfagghaergavasdfarvafgaerg
+  phone: 901-334-6799
+  status: top
+  years_active: 37
+
+three:
+  handle: Andrew Hayes
+  phone: 901-334-6799
+  status: top
+  years_active: 37
+
+four:
+  handle: Andrew Haye
+  phone: 901-334-6799
+  status: second tier
+  years_active: 37
+
+five:
+  handle: Andrew Hay
+  phone: 901-334-6799
+  status: amateur
+  years_active: 37
+
+six:
+  handle: 
+  phone: 901-334-6799
+  status: top
+  years_active: 37
+
+seven:
+  handle: Andrew Ha
+  phone: 901-334-679345
+  status: top
+  years_active: 37
+
+ eight:
+  handle: Andrew H
+  phone: 901-334-6799
+  status: 
+  years_active: 
+
+nine:
+  handle: Andrew 
+  phone: 901-334-6799
+  status: top
+  years_active: 0
+
+ten:
+  handle: Andre
+  phone: 901-334-6799
+  status: top
+  years_active: 126
+
+eleven:
+  handle: Andr
+  phone: 
+  status: top
+  years_active: 37
+

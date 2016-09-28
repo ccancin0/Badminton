@@ -6,8 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-bond = Actor.create!(name: "James", gender: "male", homepage: "http://www.007.com/", age: 37)
-stew = Actor.create!(name: "John", gender: "male", homepage: "https://www.youtube.com/", age: 24)
-laime = Actor.create!(name: "Jaime", gender: "female", homepage: "https://www.google.com/", age: 34)
-loben = Actor.create!(name: "Jonathan", gender: "non-binary category", homepage: "https://www.yahoo.com", age: 44)
-robin = Actor.create!(name: "Jacky", gender: "female", homepage: "https://www.facebook.com/", age: 52)
+Actor.create!(name: "James", gender: "male", homepage: "http://www.007.com/", age: 37)
+Actor.create!(name: "John", gender: "male", homepage: "https://www.youtube.com/", age: 24)
+Actor.create!(name: "Jaime", gender: "female", homepage: "https://www.google.com/", age: 34)
+Actor.create!(name: "Jonathan", gender: "non-binary category", homepage: "https://www.yahoo.com", age: 44)
+Actor.create!(name: "Jacky", gender: "female", homepage: "https://www.facebook.com/", age: 52)
+
+Film.create!(title: 'Lord of The Rings: The Fellowship of The Ring', genre: 'Fantasy', release_year: 2001, imdb_url: 'http://www.imdb.com/title/tt0120737/?ref_=nv_sr_1')
+Film.create!(title: 'Lord of The Rings: The Two Towers', genre: 'Fantasy', release_year: 2002, imdb_url: 'http://www.imdb.com/title/tt0167261/?ref_=nv_sr_3')
+Film.create!(title: 'Lord of The Rings: The Return of the King', genre: 'Fantasy', release_year: 2003, imdb_url: 'http://www.imdb.com/title/tt0167260/?ref_=nv_sr_2')
+Film.create!(title: 'Tangled', genre: 'Adventure', release_year: 2010, imdb_url: 'http://www.imdb.com/title/tt0398286/?ref_=nv_sr_1')
+Film.create!(title: 'Inception', genre: 'Science fiction', release_year: 2010, imdb_url: 'http://www.imdb.com/title/tt1375666/?ref_=nv_sr_1')
+
