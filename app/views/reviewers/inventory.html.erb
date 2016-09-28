@@ -1,0 +1,74 @@
+<!-- <p id="notice"><%= notice %></p> -->
+<%= form_for @reviewer do |f| %>
+  <% if @reviewer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reviewer.errors.count, "error") %> prohibited this reviewer from being saved:</h2>
+
+      <ul>
+      <% @reviewer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>Inventory</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Handle</th>
+      <th>Phone</th>
+      <th>Status</th>
+      <th>Years Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <% @reviewers = @reviewers.sort_by{|e| -e[:status]} %> 
+
+  <tbody>
+    <% @reviewers.each do |reviewer| %>
+      <tr>
+        <td><%= reviewer.handle %></td>
+        <td><%= reviewer.phone %></td>
+        <td><%= reviewer.status %></td>
+        <td><%= reviewer.years_active %></td>
+        <td><%= link_to 'Update', edit_reviewer_path(reviewer) %></td>
+        <td><%= link_to 'Delete', reviewer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h2> Add </h2>
+<br>
+
+<%= form_for @reviewer, url: {action: 'produce'} do |f| %>
+
+  <div class="field">
+    <%= f.label :handle %>
+    <%= f.text_field :handle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :years_active %>
+    <%= f.number_field :years_active %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Produce" %>
+  </div>
+<% end %>

@@ -3,6 +3,8 @@
 Rails.application.routes.draw do
   get '/films/inventory', to: 'films#inventory', as: 'films_inventory'
   post '/films/inventory', to: 'films#produce'
+  get '/reviewers/inventory', to: 'reviewers#inventory', as: 'reviewers_inventory'
+  post '/reviewers/inventory', to: 'reviewers#produce'
   resources :reviewers
   resources :actors
   resources :films

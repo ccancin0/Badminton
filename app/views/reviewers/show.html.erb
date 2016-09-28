@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Handle:</strong>
+  <%= @reviewer.handle %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @reviewer.phone %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @reviewer.status %>
+</p>
+
+<p>
+  <strong>Years Active:</strong>
+  <%= @reviewer.years_active %>
+</p>
+
+<%= link_to 'Edit', edit_reviewer_path(@reviewer) %> |
+<%= link_to 'Back', reviewers_path %>
