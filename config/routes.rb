@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :reviewers
   resources :actors
   resources :films
+
+  get '/actors/inventory', to:'actors#inventory', as: 'inventory_actor'
   get 'acklatt', to: 'static_pages#acklatt', as: 'acklatt'
   get 'sdflming', to: 'static_pages#sdflming', as: 'sdflming'
   get 'ccancino', to: 'static_pages#ccancino', as: 'ccancino'

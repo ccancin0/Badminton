@@ -21,6 +21,10 @@ class ActorsController < ApplicationController
   def edit
   end
 
+  def inventory
+    @actor = Actor.inventory
+  end
+  
   # POST /actors
   # POST /actors.json
   def create
@@ -71,4 +75,5 @@ class ActorsController < ApplicationController
     def actor_params
       params.require(:actor).permit(:name, :gender, :homepage, :age)
     end
+
 end
