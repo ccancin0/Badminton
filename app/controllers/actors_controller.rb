@@ -1,9 +1,14 @@
 class ActorsController < ApplicationController
   before_action :set_actor, only: [:show, :edit, :update, :destroy]
+  before_action :set_actors
 
   # GET /actors
   # GET /actors.json
   def index
+    @actors = Actor.all
+  end
+
+  def set_actors
     @actors = Actor.all
   end
 
@@ -15,6 +20,13 @@ class ActorsController < ApplicationController
   # GET /actors/new
   def new
     @actor = Actor.new
+  end
+
+  # GET inventory
+  def inventory
+    @actor = Actor.new
+
+    render 'inventory'
   end
 
   # GET /actors/1/edit
@@ -32,6 +44,21 @@ class ActorsController < ApplicationController
         format.json { render :show, status: :created, location: @actor }
       else
         format.html { render :new }
+        format.json { render json: @actor.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # Produce
+  def produce
+    @actor = Actor.new(actor_params)
+
+    respond_to do |format|
+      if @actor.save
+        format.html { redirect_to "http://localhost:3000/actors/inventory", notice: 'Actor was successfully created.' }
+        format.json { render :show, status: :created, location: @inventory }
+      else
+        format.html { render 'inventory' }
         format.json { render json: @actor.errors, status: :unprocessable_entity }
       end
     end
@@ -71,4 +98,5 @@ class ActorsController < ApplicationController
     def actor_params
       params.require(:actor).permit(:name, :gender, :homepage, :age)
     end
+
 end

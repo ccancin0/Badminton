@@ -67,15 +67,27 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     #
-    # Set up Scott's favorite command prompt.
+    # Customize the .bashrc file.
+    # The indentation has to be messed up for this to work.
     #
-    echo export PS1=\\\'[\\\\u\@\\\\h:\\\\w]\\\\n\\\\$ \\\' >> ~/.bashrc
+    cat >> ~/.bashrc <<EOF
+
+\# Scott's favorite shell prompt.
+export PS1='[\\u@\\h:\\w]\\n\\$ '
+
+\# Makes the shell match filenames in a case-insensitive fashion when performing
+\# filename expansion (e.g., with *).
+shopt -s nocaseglob
+EOF
 
     #
     # Set up case-insensitive autocompletion.
+    # The indentation has to be messed up for this to work.
     #
-    echo shopt -s nocaseglob >> ~/.bashrc
-    echo set completion-ignore-case On > ~/.inputrc
+    cat > ~/.inputrc <<EOF
+\# Make the shell auto-complete case insensitive.
+set completion-ignore-case On
+EOF
 
     #
     # Install the requisite Ubuntu packages.

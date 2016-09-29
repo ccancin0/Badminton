@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   post '/films/inventory', to: 'films#produce'
   get '/reviewers/inventory', to: 'reviewers#inventory', as: 'reviewers_inventory'
   post '/reviewers/inventory', to: 'reviewers#produce'
+  get '/actors/inventory', to:'actors#inventory', as: 'actors_inventory'
+  post '/actors/inventory', to: 'actors#produce'
+
   resources :reviewers
   resources :actors
   resources :films
+
   get 'acklatt', to: 'static_pages#acklatt', as: 'acklatt'
   get 'sdflming', to: 'static_pages#sdflming', as: 'sdflming'
   get 'ccancino', to: 'static_pages#ccancino', as: 'ccancino'

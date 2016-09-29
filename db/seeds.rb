@@ -6,13 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Actor.create!(name: "James", gender: "male", homepage: "http://www.007.com/", age: 37)
+Actor.create!(name: "John", gender: "male", homepage: "https://www.youtube.com/", age: 24)
+Actor.create!(name: "Jaime", gender: "female", homepage: "https://www.google.com/", age: 34)
+Actor.create!(name: "Jonathan", gender: "non-binary category", homepage: "https://www.yahoo.com", age: 44)
+Actor.create!(name: "Jacky", gender: "female", homepage: "https://www.facebook.com/", age: 52)
+
 Film.create!(title: 'Lord of The Rings: The Fellowship of The Ring', genre: 'Fantasy', release_year: 2001, imdb_url: 'http://www.imdb.com/title/tt0120737/?ref_=nv_sr_1')
 Film.create!(title: 'Lord of The Rings: The Two Towers', genre: 'Fantasy', release_year: 2002, imdb_url: 'http://www.imdb.com/title/tt0167261/?ref_=nv_sr_3')
 Film.create!(title: 'Lord of The Rings: The Return of the King', genre: 'Fantasy', release_year: 2003, imdb_url: 'http://www.imdb.com/title/tt0167260/?ref_=nv_sr_2')
 Film.create!(title: 'Tangled', genre: 'Adventure', release_year: 2010, imdb_url: 'http://www.imdb.com/title/tt0398286/?ref_=nv_sr_1')
 Film.create!(title: 'Inception', genre: 'Science fiction', release_year: 2010, imdb_url: 'http://www.imdb.com/title/tt1375666/?ref_=nv_sr_1')
+<<<<<<< HEAD
 Reviewer.create!(handle: 'Andrew Hayes', phone: '9013346798', status: 'top', years_active: '15')
 Reviewer.create!(handle: 'Andrew Duncan', phone: '9013346797', status: 'top', years_active: '16')
 Reviewer.create!(handle: 'Andrew Garfield', phone: '9013346796', status: 'top', years_active: '17')
 Reviewer.create!(handle: 'Michael Scarn', phone: '9013346795', status: 'top', years_active: '18')
 Reviewer.create!(handle: 'Ron Swanson', phone: '9013346794', status: 'top', years_active: '19')
+=======
+
+>>>>>>> add92b1e84e05b534a9bb3f0d98df5c3f6b326f4
