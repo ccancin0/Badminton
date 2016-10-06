@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927091415) do
+ActiveRecord::Schema.define(version: 20161005230229) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20160927091415) do
     t.string   "imdb_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "producer_id"
+    t.index ["producer_id"], name: "index_films_on_producer_id"
+  end
+
+  create_table "producers", force: :cascade do |t|
+    t.string   "name"
+    t.text     "greeting"
+    t.text     "mission_statement"
+    t.date     "activation_date"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "reviewers", force: :cascade do |t|
@@ -37,6 +48,17 @@ ActiveRecord::Schema.define(version: 20160927091415) do
     t.integer  "years_active"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.decimal  "stars"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "film_id"
+    t.index ["film_id"], name: "index_reviews_on_film_id"
   end
 
 end

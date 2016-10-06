@@ -8,6 +8,7 @@
       <th>Title</th>
       <th>Genre</th>
       <th>Release year</th>
+      <th>Producer</th>
       <th>Imdb url</th>
       <th colspan="3"></th>
     </tr>
@@ -19,6 +20,7 @@
         <td><%= film.title %></td>
         <td><%= film.genre %></td>
         <td><%= film.release_year %></td>
+        <td><%= film.producer.name %></td>
         <td><%= film.imdb_url %></td>
         <td><%= link_to 'Show', film %></td>
         <td><%= link_to 'Edit', edit_film_path(film) %></td>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  greeting: MyText
+  mission_statement: MyText
+  activation_date: 2016-10-05
+
+two:
+  name: MyString
+  greeting: MyText
+  mission_statement: MyText
+  activation_date: 2016-10-05

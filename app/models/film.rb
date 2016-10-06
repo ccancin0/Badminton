@@ -6,5 +6,8 @@ class Film < ApplicationRecord
   	validates :imdb_url, uniqueness: true
   	validates :title, :genre, presence: true
   	validates :release_year, :numericality => { :greater_than => 1888, :less_than_or_equal_to => 2016 }, allow_blank: true
+
+  	belongs_to :producer
+  	has_many :critiques, class_name: 'Review', foreign_key: 'film_id'
 end
 
