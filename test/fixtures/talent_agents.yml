@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: Leo
+  last_name: Nardo
+  dob: 2016-10-02
+  pitch: high
+
+two:
+  first_name: Maddy
+  last_name: Queen
+  dob: 
+  pitch: low

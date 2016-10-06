@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Talent Agents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Dob</th>
+      <th>Pitch</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @talent_agents.each do |talent_agent| %>
+      <tr>
+        <td><%= talent_agent.first_name %></td>
+        <td><%= talent_agent.last_name %></td>
+        <td><%= talent_agent.dob %></td>
+        <td><%= talent_agent.pitch %></td>
+        <td><%= link_to 'Show', talent_agent %></td>
+        <td><%= link_to 'Edit', edit_talent_agent_path(talent_agent) %></td>
+        <td><%= link_to 'Destroy', talent_agent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Talent Agent', new_talent_agent_path %>

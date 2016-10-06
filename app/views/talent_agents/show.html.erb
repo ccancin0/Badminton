@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @talent_agent.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @talent_agent.last_name %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @talent_agent.dob %>
+</p>
+
+<p>
+  <strong>Pitch:</strong>
+  <%= @talent_agent.pitch %>
+</p>
+
+<%= link_to 'Edit', edit_talent_agent_path(@talent_agent) %> |
+<%= link_to 'Back', talent_agents_path %>

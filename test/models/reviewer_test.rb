@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ReviewerTest < ActiveSupport::TestCase
-  test "should be no error" do
+   test "should be no error" do
    		reviewers = reviewers(:one)
      	assert reviewers.valid?
    end
@@ -47,12 +47,12 @@ class ReviewerTest < ActiveSupport::TestCase
    		assert reviewers.valid?
    end	
 
-   test "shouldn't allowed over 125 " do
+   test "shouldn't allowed over 125" do
    		reviewers = reviewers(:ten)
    		assert_not reviewers.valid?
    end	
 
-   test "shouldn't be allowed phone must have number " do
+   test "shouldn't be allowed phone must have number" do
    		reviewers = reviewers(:eleven)
    		assert_not reviewers.valid?
    end	
