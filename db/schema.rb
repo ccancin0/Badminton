@@ -10,6 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20161005230229) do
+
   create_table "actors", force: :cascade do |t|
     t.string   "name"
     t.string   "gender"
@@ -48,15 +50,6 @@
     t.datetime "updated_at",   null: false
   end
 
-  create_table "talent_agents", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.date     "dob"
-    t.text     "pitch"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.string   "title"
     t.string   "subtitle"
@@ -66,6 +59,15 @@
     t.datetime "updated_at", null: false
     t.integer  "film_id"
     t.index ["film_id"], name: "index_reviews_on_film_id"
+  end
+
+  create_table "talent_agents", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "dob"
+    t.text     "pitch"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
