@@ -42,10 +42,12 @@ def produce
   # GET /films/new
   def new
     @film = Film.new
+    @producers = Producer.all
   end
 
   # GET /films/1/edit
   def edit
+    @producers = Producer.all
   end
 
   # POST /films

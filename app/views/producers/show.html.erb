@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @producer.name %>
+</p>
+
+<p>
+  <strong>Greeting:</strong>
+  <%= @producer.greeting %>
+</p>
+
+<p>
+  <strong>Mission statement:</strong>
+  <%= @producer.mission_statement %>
+</p>
+
+<p>
+  <strong>Activation date:</strong>
+  <%= @producer.activation_date %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Release year</th>
+      <th>Imdb url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @producer.films.each do |film| %>
+      <tr>
+        <td><%= film.title %></td>
+        <td><%= film.genre %></td>
+        <td><%= film.release_year %></td>
+        <td><%= film.imdb_url %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_producer_path(@producer) %> |
+<%= link_to 'Back', producers_path %>

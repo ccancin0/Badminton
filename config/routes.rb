@@ -2,6 +2,9 @@
 
 Rails.application.routes.draw do
   resources :talent_agents
+  resources :reviews
+  resources :producers
+
   get '/films/inventory', to: 'films#inventory', as: 'films_inventory'
   post '/films/inventory', to: 'films#produce'
   get '/reviewers/inventory', to: 'reviewers#inventory', as: 'reviewers_inventory'

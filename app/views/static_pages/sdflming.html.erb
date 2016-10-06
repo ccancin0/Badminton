@@ -3,14 +3,25 @@
 <p> A picture and video of badminton incase you didn't know. Also, down below are the <br>members of the cs badminton team. We consist of Alex Klatt, Andrew Hayes, and Carlos Cancino </p>
 <p>Here's an index of pages for our team. </p>
 
+	
 <ul>
+	<div>
+	<label><b>Klatt, Alex</b></label>	
+	<li><%= link_to "Producers", producers_path %></li>
+	<li><%= link_to "Films", films_path %></li>
+	<br>
+	</div>
 
-
-	<li><%= link_to 'Klatt, Alex (Inventory)', films_inventory_path %></li>
-
+	<div>
+	<label><b>Cancino, Carlos</b></label>	
 	<li><%= link_to 'Cancino, Carlos (Inventory)', actors_inventory_path %></li>
+	<br>
+	</div>
 
+	<div>
+	<label><b>Hayes, Andrew</b></label>	
 	<li><%= link_to 'Hayes, Andrew (Inventory)', reviewers_inventory_path %></li>
+	</div>
 
 </ul>
 
