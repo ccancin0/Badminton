@@ -9,5 +9,6 @@ class Film < ApplicationRecord
 
   	belongs_to :producer
   	has_many :critiques, class_name: 'Review', foreign_key: 'film_id'
+  	belongs_to :actor
 end
 

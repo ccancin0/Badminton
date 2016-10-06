@@ -6,11 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Actor.create!(name: "James", gender: "male", homepage: "http://www.007.com/", age: 37)
-Actor.create!(name: "John", gender: "male", homepage: "https://www.youtube.com/", age: 24)
-Actor.create!(name: "Jaime", gender: "female", homepage: "https://www.google.com/", age: 34)
-Actor.create!(name: "Jonathan", gender: "non-binary", homepage: "https://www.yahoo.com", age: 44)
-Actor.create!(name: "Jacky", gender: "female", homepage: "https://www.facebook.com/", age: 52)
+james = Actor.create!(name: "James", gender: "male", homepage: "http://www.007.com/", age: 37)
+john = Actor.create!(name: "John", gender: "male", homepage: "https://www.youtube.com/", age: 24)
+jaime = Actor.create!(name: "Jaime", gender: "female", homepage: "https://www.google.com/", age: 34)
+jonathan = Actor.create!(name: "Jonathan", gender: "non-binary", homepage: "https://www.yahoo.com", age: 44)
+jacky = Actor.create!(name: "Jacky", gender: "female", homepage: "https://www.facebook.com/", age: 52)
+
+james_talent_agent = Talent_Agent.create!(first_name: "Ari", last_name: "Emanuel", dob: 2016-10-02, pitch: high)
+john_talent_agent = Talent_Agent.create!(first_name: "Lew", last_name: "Wasserman", dob: 1994-10-02, pitch: low)
+jaime_talent_agent = Talent_Agent.create!(first_name: "Freddie", last_name: "Fields", dob: 2004-10-02, pitch: medium)
+jonathan_talent_agent = Talent_Agent.create!(first_name: "Sue", last_name: "Mengers", dob: 1990-10-02, pitch: low)
+jacky_talent_agent = Talent_Agent.create!(first_name: "Orions", last_name: "Barnes", dob: 2000-10-02, pitch: high)
 
 lotr1 = Film.create!(title: 'Lord of The Rings: The Fellowship of The Ring', genre: 'Fantasy', release_year: 2001, imdb_url: 'http://www.imdb.com/title/tt0120737/?ref_=nv_sr_1')
 lotr2 = Film.create!(title: 'Lord of The Rings: The Two Towers', genre: 'Fantasy', release_year: 2002, imdb_url: 'http://www.imdb.com/title/tt0167261/?ref_=nv_sr_3')
@@ -52,6 +58,24 @@ tangled.critiques << [r3, r4]
 tangled.save!
 batman.critiques << [r5, r6]
 batman.save!
+
+james.talent_agent = james_agent
+james.films << [lotr1, lotr2]
+james.save!
+john.talent_agent = john_agent
+john.films << hero
+john.save!
+jaime.talent_agent = jaime_agent
+jaime.films << [lotr3, tangled]
+jaime.save!
+jonathan.talent_agent = jonathan_agent
+jonathan.films << batman
+jonathan.save!
+jacky.talent_agent = jacky_agent
+jacky.films << inception
+jacky.save!
+
+
 
 Reviewer.create!(handle: 'Andrew Hayes', phone: '9013346798', status: 'top', years_active: '15')
 Reviewer.create!(handle: 'Andrew Duncan', phone: '9013346797', status: 'top', years_active: '16')

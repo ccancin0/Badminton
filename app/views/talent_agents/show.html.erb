@@ -20,5 +20,28 @@
   <%= @talent_agent.pitch %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> Gender </th>
+      <th> Homepage </th>
+      <th> Age </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @talent_agents.actor.each do |actor| %>
+      <tr>
+        <td><%= actor.name %></td>
+        <td><%= actor.gender %></td>
+        <td><%= actor.homepage %></td>
+        <td><%= actor.age %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_talent_agent_path(@talent_agent) %> |
 <%= link_to 'Back', talent_agents_path %>
