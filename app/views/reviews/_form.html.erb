@@ -31,7 +31,18 @@
     <%= f.text_area :body %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="field">
+<form>
+    <legend>Reviewer</legend>
+    <select>
+    <% @reviewers.each do |h| %>
+      <option><%= h.name %></option>
+    <% end %>
+    </select><br>
+    <br>
+  </form>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

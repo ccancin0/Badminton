@@ -33,18 +33,38 @@ roy = Producer.create!(name: 'Roy Conli', greeting: 'Hello, I like animation', m
 chris = Producer.create!(name: 'Christopher Nolan', greeting: 'Hello, I was born on July 30, 1970 in London, England', 
 mission_statement: 'To blow your mind', activation_date: '1998/4/27')
 
+stephen = Reviewer.create!(handle: 'Stephen', phone: '9013346799', status: 'amateur', 
+years_active: 15)
+joey = Reviewer.create!(handle: 'Joey', phone: '901234599', status: 'amateur', 
+years_active: 18)
+paul = Reviewer.create!(handle: 'Paul', phone: '9015687799', status: 'top', 
+years_active: 67)
+
 r1 = Review.create!(title: 'Hobbiton', subtitle: 'New Zealand reCreated', stars: 5.0, 
 body: 'Peter Jackson builds fictional Middle-Earth in New Zealand...')
 r2 = Review.create!(title: 'J.R.R Tolkien', subtitle: 'Book to Movie', stars: 3.0,
    body: 'Franz Walsh does a good job writing the screenplay...')
-r3 = Review.create!(title: 'Animatioin Era', subtitle: 'More Animation than Ever', stars: 4.5, 
+r3 = Review.create!(title: 'Animation Era', subtitle: 'More Animation than Ever', stars: 4.5, 
        body: 'The animation in Tangled is bigger and better...')
-r4 = Review.create!(title: 'Repunzel', subtitle: 'Animated Story as Old as Time', stars: 3.5,
+r4 = Review.create!(title: 'Rapunzel', subtitle: 'Animated Story as Old as Time', stars: 3.5,
 body: 'The age-old story takes things to a new level...')
 r5 = Review.create!(title: 'Nolan Strikes Again', subtitle: 'Best Batman Yet', stars: 4.5,
 body: 'Christopher Nolan is a mastermind in entertainment...')
-r6 = Review.create!(title: 'Tragedy Behind the Scences', subtitle: 'The Joker No Longer', stars: 2.0,
+r6 = Review.create!(title: 'Tragedy Behind the Scenes', subtitle: 'The Joker No Longer', stars: 2.0,
 body: 'When an actor has to play a psychotic role it leads to problems...' ) 
+
+c1 = Comment.create!(heading: 'On Hobbiton', permalink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', comment_text: 'Absolutely beautiful set. Would recommend travelling to New Zealand to visit it', 
+posted_on: '10/7/2016')
+c2 = Comment.create!(heading: 'On J.R.R Tolkien', permalink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', comment_text: 'One of the best adaptation of book to movie out there, although they should have kept some of the songs.', 
+posted_on: '10/7/2016')
+c3 = Comment.create!(heading: 'On Animation Era', permalink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', comment_text: 'I disagree, I think the animation has strayed from what originally made it great for minds of kids, lovable characters with underlying meaning.', 
+posted_on: '10/7/2016')
+c4 = Comment.create!(heading: 'On Nolan Strikes Again', permalink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', comment_text: 'Easily best Batman film that has ever and will ever be made.', 
+posted_on: '10/7/2016')
+c5 = Comment.create!(heading: 'On Tragedy Behind the Scenes', permalink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', comment_text: 'He was too young...', 
+posted_on: '10/7/2016')
+c6 = Comment.create!(heading: 'On Rapunzel', permalink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', comment_text: 'have not seen it so dunno...', 
+posted_on: '10/7/2016')
 
 peter.films << [lotr1, lotr2, lotr3]
 peter.save!
@@ -58,7 +78,24 @@ tangled.critiques << [r3, r4]
 tangled.save!
 batman.critiques << [r5, r6]
 batman.save!
-
+stephen.reviewers << [r1,r2]
+stephen.save!
+joey.reviewers << [r3,r4]
+joey.save!
+paul.reviewers << [r5,r6]
+paul.save!
+r1.reviews << [c1]
+r1.save!
+r2.reviews << [c2]
+r2.save!
+r3.reviews << [c3]
+r3.save!
+r5.reviews << [c4]
+r4.save!
+r6.reviews << [c5]
+r5.save!
+r4.reviews << [c6]
+r6.save!
 james.talent_agent = james_agent
 james.films << [lotr1, lotr2]
 james.save!
@@ -74,11 +111,3 @@ jonathan.save!
 jacky.talent_agent = jacky_agent
 jacky.films << inception
 jacky.save!
-
-
-
-Reviewer.create!(handle: 'Andrew Hayes', phone: '9013346798', status: 'top', years_active: '15')
-Reviewer.create!(handle: 'Andrew Duncan', phone: '9013346797', status: 'top', years_active: '16')
-Reviewer.create!(handle: 'Andrew Garfield', phone: '9013346796', status: 'top', years_active: '17')
-Reviewer.create!(handle: 'Michael Scarn', phone: '9013346795', status: 'top', years_active: '18')
-Reviewer.create!(handle: 'Ron Swanson', phone: '9013346794', status: 'top', years_active: '19')

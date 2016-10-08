@@ -2,13 +2,8 @@ class ReviewersController < ApplicationController
   before_action :set_reviewer, only: [:show, :edit, :update, :destroy]
   before_action :set_reviewers
 
-  # GET /reviewers
-  # GET /reviewers.json
-  def set_reviewers
-    @reviewers = Reviewer.all
-  end
 
-  def index
+  def set_reviewers
     @reviewers = Reviewer.all
   end
 
@@ -33,8 +28,10 @@ def produce
     end
   end
 
-  # GET /reviewers
-  # GET /reviewers.json
+  def index
+    @reviewers = Reviewer.all
+  end
+
   # GET /reviewers/1
   # GET /reviewers/1.json
   def show
@@ -43,10 +40,12 @@ def produce
   # GET /reviewers/new
   def new
     @reviewer = Reviewer.new
+    @reviews = Review.all
   end
 
   # GET /reviewers/1/edit
   def edit
+    @reviews = Review.all
   end
 
   # POST /reviewers

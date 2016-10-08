@@ -1,6 +1,7 @@
 
 
 Rails.application.routes.draw do
+  resources :comments
   resources :talent_agents
   resources :reviews
   resources :producers

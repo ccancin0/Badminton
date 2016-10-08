@@ -2,8 +2,8 @@
 
 one:
   title: MyString
-  subtitle: MyString
-  stars: 9.99
+  subtitle: MyStringIsAmazing
+  stars: 5
   body: MyText
 
 two:

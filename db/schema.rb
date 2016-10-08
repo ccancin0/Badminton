@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006223415) do
+ActiveRecord::Schema.define(version: 20161008060015) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20161006223415) do
     t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "heading"
+    t.string   "permalink"
+    t.text     "comment_text"
+    t.date     "posted_on"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "films", force: :cascade do |t|
@@ -50,6 +59,8 @@ ActiveRecord::Schema.define(version: 20161006223415) do
     t.integer  "years_active"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "review_id"
+    t.index ["review_id"], name: "index_reviewers_on_review_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -60,6 +71,8 @@ ActiveRecord::Schema.define(version: 20161006223415) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "film_id"
+    t.integer  "comment_id"
+    t.index ["comment_id"], name: "index_reviews_on_comment_id"
     t.index ["film_id"], name: "index_reviews_on_film_id"
   end
 
